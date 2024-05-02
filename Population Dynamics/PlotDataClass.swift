@@ -21,13 +21,8 @@ import Observation
         
         Task{
             await self.plotBlank()
-            
         }
-        
     }
-    
-    
-    
     /// Displays a Blank Chart
     @MainActor func plotBlank()
     {
@@ -37,15 +32,13 @@ import Observation
         //set the Plot Parameters
         changingPlotParameters.yMax = 1.0
         changingPlotParameters.yMin = 0.0
-        changingPlotParameters.xMax = 4.0
-        changingPlotParameters.xMin = 1.0
+        changingPlotParameters.xMax = 30.0
+        changingPlotParameters.xMin = 0.0
         changingPlotParameters.xLabel = "Growth Rate (µ)"
         changingPlotParameters.yLabel = "Attractor Populations (X^*)"
         changingPlotParameters.lineColor = Color.blue
         changingPlotParameters.shouldIPlotPointLines = false
         changingPlotParameters.title = "Initial PLot"
-        
-        
         
     }
     
@@ -60,6 +53,7 @@ import Observation
     /// Append Data appends Data to the Plot. Increments the pointNumber for 1-D Data
     /// - Parameter dataPoint: Array of (x, y) data for plotting
     @MainActor func appendData(dataPoint: [(x: Double, y: Double)])
+    
     {
         
         for item in dataPoint{

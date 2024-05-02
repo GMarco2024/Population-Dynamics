@@ -21,7 +21,7 @@ struct TextView: View {
     var body: some View {
         HStack(spacing: 20) {
             VStack {
-                Text("Bifurcation Points")
+                Text("Plot Points")
                     .font(.headline)
                     .foregroundColor(.gray)
                 TextEditor(text: $plotData.plotArray[0].calculatedText)

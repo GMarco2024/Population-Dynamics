@@ -6,11 +6,15 @@ struct ContentView: View {
     
     @State private var calculator = CalculatePlotData()
     @State private var selector = 0
+    @State private var inputμ: String = ""
+    @State private var inputInitialPopulation: String = ""
+    @State private var inputGenerations: String = ""
+    @State private var resultText: String = ""
+    @State private var showError: Bool = false // State to control the visibility of the error message
     
     var body: some View {
         VStack {
             Group {
-                
                 Text("Bifurcation Diagram")
                     .font(.title)
                     .bold()
@@ -23,16 +27,11 @@ struct ContentView: View {
              
                     VStack {
                         Chart(plotData.plotArray[selector].plotData) { data in
-                            if plotData.plotArray[selector].changingPlotParameters.shouldIPlotPointLines {
-                                LineMark(
-                                    x: .value("Position", data.xVal),
-                                    y: .value("Height", data.yVal)
-                                )
-                                .foregroundStyle(plotData.plotArray[selector].changingPlotParameters.lineColor)
-                            }
-                            PointMark(x: .value("Position", data.xVal), y: .value("Height", data.yVal))
-                                .symbolSize(1)
-                                .foregroundStyle(plotData.plotArray[selector].changingPlotParameters.lineColor)
+                            LineMark(
+                                x: .value("Generation", data.xVal),
+                                y: .value("Population", data.yVal)
+                            )
+                            .foregroundStyle(plotData.plotArray[selector].changingPlotParameters.lineColor)
                         }
                         .chartYScale(domain: [plotData.plotArray[selector].changingPlotParameters.yMin, plotData.plotArray[selector].changingPlotParameters.yMax])
                         .chartXScale(domain: [plotData.plotArray[selector].changingPlotParameters.xMin, plotData.plotArray[selector].changingPlotParameters.xMax])
@@ -47,33 +46,56 @@ struct ContentView: View {
                 .frame(alignment: .center)
             }
          
-            
-            Button("Plot Logistic Map") {
-                Task {
-                    await logisticMapFeigenbaum()
+            Group {
+                HStack {
+                    VStack {
+                        Text("Growth Rate (μ)")
+                        TextField("Enter growth rate (μ) between 0 and 4", text: $inputμ)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(maxWidth: 150)
+                    }
+                    
+                    VStack {
+                        Text("Initial Population (Proportion)")
+                        TextField("Enter initial population proportion between 0 and 1", text: $inputInitialPopulation)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(maxWidth: 150)
+                    }
+                    
+                    VStack {
+                        Text("Number of Generations")
+                        TextField("Enter number of generations", text: $inputGenerations)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(maxWidth: 150)
+                    }
+                }
+                
+                Button("Calculate") {
+                    Task {
+                        await calculatePopulationDynamics()
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding()
+
+                if showError {
+                    Text(resultText)
+                        .foregroundColor(.red)
+                        .padding()
                 }
             }
-            .padding()
         }
     }
     
-    @MainActor func setupPlotDataModel(selector: Int) {
-        calculator.plotDataModel = self.plotData.plotArray[selector]
-    }
-    
-    func logisticMapFeigenbaum() async {
-        self.selector = 0
-        await calculate()
-    
-
-    }
-    
-    /// calculate
-    /// Function accepts the command to start the calculation from the GUI
-    func calculate() async {
-        // Pass the plotDataModel to the Calculator
-        await setupPlotDataModel(selector: 0)
-        await calculator.plotLogisticMapBifurcation()
+    func calculatePopulationDynamics() async {
+        guard let mu = Double(inputμ), let initialPop = Double(inputInitialPopulation), let generations = Int(inputGenerations) else {
+            resultText = "Invalid input. Please enter valid numbers."
+            showError = true // Show the error message
+            return
+        }
+        showError = false // Hide the error message if input is valid
+        calculator.plotDataModel = plotData.plotArray[selector]
+        await calculator.generateLogisticMapData(mu: mu, initialX: initialPop, numberOfGenerations: generations)
     }
 }
 

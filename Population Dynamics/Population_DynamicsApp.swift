@@ -20,12 +20,12 @@ struct Population_DynamicsApp: App {
                 ContentView()
                     .environmentObject(plotData)
                     .tabItem {
-                        Label("Bifurcation Plot", systemImage: "chart.xyaxis.line")
+                        Label("Logistic Population", systemImage: "chart.xyaxis.line")
                     }
                 TextView()
                     .environmentObject(plotData)
                     .tabItem {
-                        Label("Bifurcation Plot Points", systemImage: "text.alignleft")
+                        Label("Plot Points", systemImage: "text.alignleft")
                 }
             }
         }
