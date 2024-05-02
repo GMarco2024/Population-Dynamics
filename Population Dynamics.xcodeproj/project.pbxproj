@@ -14,6 +14,15 @@
 		332FF9742BE414030000445F /* Population_DynamicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF9732BE414030000445F /* Population_DynamicsTests.swift */; };
 		332FF97E2BE414030000445F /* Population_DynamicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF97D2BE414030000445F /* Population_DynamicsUITests.swift */; };
 		332FF9802BE414030000445F /* Population_DynamicsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF97F2BE414030000445F /* Population_DynamicsUITestsLaunchTests.swift */; };
+		332FF98D2BE4161D0000445F /* CalculatePlotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF98C2BE4161D0000445F /* CalculatePlotData.swift */; };
+		332FF98F2BE4162D0000445F /* ChangingPlotParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF98E2BE4162D0000445F /* ChangingPlotParameters.swift */; };
+		332FF9912BE416420000445F /* PlotDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF9902BE416420000445F /* PlotDataStruct.swift */; };
+		332FF9932BE4164E0000445F /* PlotDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF9922BE4164E0000445F /* PlotDataClass.swift */; };
+		332FF9952BE4165B0000445F /* PlotClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF9942BE4165B0000445F /* PlotClass.swift */; };
+		332FF9972BE416650000445F /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF9962BE416650000445F /* Operators.swift */; };
+		332FF9992BE4166F0000445F /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF9982BE4166F0000445F /* TextView.swift */; };
+		332FF99B2BE4167F0000445F /* TextExportDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF99A2BE4167F0000445F /* TextExportDocument.swift */; };
+		332FF99D2BE416880000445F /* PlotPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332FF99C2BE416880000445F /* PlotPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,15 @@
 		332FF9792BE414030000445F /* Population DynamicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Population DynamicsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		332FF97D2BE414030000445F /* Population_DynamicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Population_DynamicsUITests.swift; sourceTree = "<group>"; };
 		332FF97F2BE414030000445F /* Population_DynamicsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Population_DynamicsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		332FF98C2BE4161D0000445F /* CalculatePlotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePlotData.swift; sourceTree = "<group>"; };
+		332FF98E2BE4162D0000445F /* ChangingPlotParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangingPlotParameters.swift; sourceTree = "<group>"; };
+		332FF9902BE416420000445F /* PlotDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotDataStruct.swift; sourceTree = "<group>"; };
+		332FF9922BE4164E0000445F /* PlotDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotDataClass.swift; sourceTree = "<group>"; };
+		332FF9942BE4165B0000445F /* PlotClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotClass.swift; sourceTree = "<group>"; };
+		332FF9962BE416650000445F /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		332FF9982BE4166F0000445F /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		332FF99A2BE4167F0000445F /* TextExportDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExportDocument.swift; sourceTree = "<group>"; };
+		332FF99C2BE416880000445F /* PlotPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +115,15 @@
 			children = (
 				332FF9612BE413FF0000445F /* Population_DynamicsApp.swift */,
 				332FF9632BE413FF0000445F /* ContentView.swift */,
+				332FF98C2BE4161D0000445F /* CalculatePlotData.swift */,
+				332FF98E2BE4162D0000445F /* ChangingPlotParameters.swift */,
+				332FF9902BE416420000445F /* PlotDataStruct.swift */,
+				332FF9922BE4164E0000445F /* PlotDataClass.swift */,
+				332FF9942BE4165B0000445F /* PlotClass.swift */,
+				332FF9962BE416650000445F /* Operators.swift */,
+				332FF9982BE4166F0000445F /* TextView.swift */,
+				332FF99A2BE4167F0000445F /* TextExportDocument.swift */,
+				332FF99C2BE416880000445F /* PlotPoint.swift */,
 				332FF9652BE414020000445F /* Assets.xcassets */,
 				332FF9672BE414020000445F /* Population_Dynamics.entitlements */,
 				332FF9682BE414020000445F /* Preview Content */,
@@ -260,7 +287,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				332FF9642BE413FF0000445F /* ContentView.swift in Sources */,
+				332FF9972BE416650000445F /* Operators.swift in Sources */,
+				332FF99D2BE416880000445F /* PlotPoint.swift in Sources */,
+				332FF9952BE4165B0000445F /* PlotClass.swift in Sources */,
+				332FF9932BE4164E0000445F /* PlotDataClass.swift in Sources */,
+				332FF98F2BE4162D0000445F /* ChangingPlotParameters.swift in Sources */,
+				332FF98D2BE4161D0000445F /* CalculatePlotData.swift in Sources */,
+				332FF9992BE4166F0000445F /* TextView.swift in Sources */,
+				332FF9912BE416420000445F /* PlotDataStruct.swift in Sources */,
 				332FF9622BE413FF0000445F /* Population_DynamicsApp.swift in Sources */,
+				332FF99B2BE4167F0000445F /* TextExportDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
