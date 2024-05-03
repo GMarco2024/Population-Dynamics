@@ -31,9 +31,6 @@ struct TextView: View {
                 
                 // Sets the size of the text editor.
                 .frame(width: width, height: height)
-                
-                // Adds a gray border around the text editor.
-                .border(Color.gray, width: 1)
                 .padding()
             }
         }
