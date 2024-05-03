@@ -56,7 +56,7 @@ struct ContentView: View {
                 .frame(alignment: .center)
             }
             
-            //Here we have the textfields in which serve as the input for the Groth Rate, Initial Population, and Number of Generations.
+            //Here we have the textfields in which serve as the input for the Growth Rate, Initial Population, and Number of Generations.
          
             Group {
                 HStack {
