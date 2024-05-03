@@ -1,3 +1,11 @@
+//
+//  ChangingPlotParameters.swift
+//  Bifurcation Diagram
+//
+//  Created by Jeff_Terry on 1/15/24.
+//  Modified by Marco Gonzalez 2/11/24
+//
+
 import SwiftUI
 import Charts
 
@@ -10,7 +18,7 @@ struct ContentView: View {
     @State private var inputInitialPopulation: String = ""
     @State private var inputGenerations: String = ""
     @State private var resultText: String = ""
-    @State private var showError: Bool = false // State to control the visibility of the error message
+    @State private var showError: Bool = false
     
     var body: some View {
         VStack {
@@ -90,10 +98,10 @@ struct ContentView: View {
     func calculatePopulationDynamics() async {
         guard let mu = Double(inputμ), let initialPop = Double(inputInitialPopulation), let generations = Int(inputGenerations) else {
             resultText = "Invalid input. Please enter valid numbers."
-            showError = true // Show the error message
+            showError = true
             return
         }
-        showError = false // Hide the error message if input is valid
+        showError = false
         calculator.plotDataModel = plotData.plotArray[selector]
         await calculator.generateLogisticMapData(mu: mu, initialX: initialPop, numberOfGenerations: generations)
     }

@@ -3,7 +3,7 @@
 //  Bifurcation Diagram
 //
 //  Created by Jeff_Terry on 1/15/24.
-//  Modified by Marco Gonzalez 2/11/24
+//  Modified by Marco Gonzalez on [your modification date]
 //
 
 import Foundation
@@ -18,18 +18,16 @@ import Observation
     @MainActor var pointNumber = 1.0
     
     init(fromLine line: Bool) {
-        
-        Task{
+        Task {
             await self.plotBlank()
         }
     }
+
     /// Displays a Blank Chart
-    @MainActor func plotBlank()
-    {
-        
+    @MainActor func plotBlank() {
         zeroData()
-        
-        //set the Plot Parameters
+
+        // Set the Plot Parameters
         changingPlotParameters.yMax = 1.0
         changingPlotParameters.yMin = 0.0
         changingPlotParameters.xMax = 30.0
@@ -38,32 +36,26 @@ import Observation
         changingPlotParameters.yLabel = "Attractor Populations (X^*)"
         changingPlotParameters.lineColor = Color.blue
         changingPlotParameters.shouldIPlotPointLines = false
-        changingPlotParameters.title = "Initial PLot"
-        
+        changingPlotParameters.title = "Initial Plot"
     }
-    
+
     /// Zeros Out The Data Being Plotted
-    @MainActor func zeroData(){
-        
+    @MainActor func zeroData() {
         plotData = []
         pointNumber = 1.0
-        
+        calculatedText = "" // Ensure text is cleared when data is zeroed
     }
-    
+
     /// Append Data appends Data to the Plot. Increments the pointNumber for 1-D Data
     /// - Parameter dataPoint: Array of (x, y) data for plotting
-    @MainActor func appendData(dataPoint: [(x: Double, y: Double)])
-    
-    {
-        
-        for item in dataPoint{
-            
-            let dataValue :[PlotDataStruct] =  [.init(xVal: item.x, yVal: item.y)]
-            
+    @MainActor func appendData(dataPoint: [(x: Double, y: Double)]) {
+        for item in dataPoint {
+            let dataValue: [PlotDataStruct] = [.init(xVal: item.x, yVal: item.y)]
             plotData.append(contentsOf: dataValue)
             pointNumber += 1.0
-            
+
+            // Update calculatedText to include new point
+            calculatedText += "\(item.x), \(item.y)\n"
         }
     }
 }
-

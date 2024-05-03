@@ -69,8 +69,9 @@ import SwiftUI
             dataPoints.append((x: Double(generation), y: x))
         }
 
-        await appendDataToPlot(plotData: dataPoints)
         await updateCalculatedTextOnMainThread(theText: "µ: \(mu), Initial Population: \(initialX), Generations: \(numberOfGenerations)")
+        await appendDataToPlot(plotData: dataPoints)
+
     }
 
     /// Resets the Calculated Text to ""
