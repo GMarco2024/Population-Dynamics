@@ -23,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Group {
-                Text("Bifurcation Diagram")
+                Text("Population Dynamics Plot")
                     .font(.title)
                     .bold()
                     .underline()
