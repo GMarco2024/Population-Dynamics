@@ -34,7 +34,7 @@ import Observation
     // Clears any existing data.
         zeroData()
 
-    // Set the Plot Parameters with initial values for a blank plot.
+    // Set the Plot Parameters with initial values.
         changingPlotParameters.yMax = 1.0
         changingPlotParameters.yMin = 0.0
         changingPlotParameters.xMax = 30.0
