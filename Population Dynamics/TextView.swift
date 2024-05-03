@@ -1,6 +1,6 @@
 //
 //  TextView.swift
-//  Bifurcation Diagram
+//  Population Dynamics
 //
 //  Created by Jeff_Terry on 1/15/24.
 //  Modified by Marco Gonzalez on [your modification date]

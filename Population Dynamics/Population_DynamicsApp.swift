@@ -1,6 +1,6 @@
 //
-//  Bifurcation_DiagramApp.swift
-//  Bifurcation Diagram
+//  Population_DynamicsApp.swift
+//  Population Dynamics
 //
 //  Created by Marco Gonzalez on 4/9/24.
 //

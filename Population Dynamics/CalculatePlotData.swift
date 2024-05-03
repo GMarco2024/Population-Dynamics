@@ -1,6 +1,6 @@
 //
 //  CalculatePlotData.swift
-//  Bifurcation Diagram
+//  Population Dynamics
 //
 //  Created by Jeff_Terry on 1/15/24.
 //  Modified by Marco Gonzalez 2/11/24

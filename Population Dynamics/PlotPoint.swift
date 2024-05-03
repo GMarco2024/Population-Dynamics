@@ -1,6 +1,6 @@
 //
 //  PlotPoint.swift
-//  Bifurcation Diagram
+//  Population Dynamics
 //
 //  Created by Marco on 4/19/24.
 //

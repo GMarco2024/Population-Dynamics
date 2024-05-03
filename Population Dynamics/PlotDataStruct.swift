@@ -1,6 +1,6 @@
 //
 //  PlotDataStruct.swift
-//  Bifurcation Diagram
+//  Population Dynamics
 //
 //  Created by Jeff_Terry on 1/15/24.
 //  Modified by Marco Gonzalez 2/11/24
@@ -9,7 +9,7 @@
 import Foundation
 import Charts
 
-// This defines a structure for storing individual data points for plotting in which onforms to Identifiable to facilitate its use in lists and views that require elements that can be identified.
+// This defines a structure for storing individual data points for plotting.
 struct PlotDataStruct: Identifiable {
     // Provides a unique identifier for each data point, using the x-value as its unique ID.
     var id: Double { xVal }
