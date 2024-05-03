@@ -12,12 +12,14 @@ struct TextView: View {
     
     @EnvironmentObject var plotData: PlotClass
     
-    // Dimensions for the text editors
+    // Dimensions for the text editors such as height and width.
     @State private var width: CGFloat = 300
     @State private var height: CGFloat = 500
     
     var body: some View {
         VStack {
+            
+     //Title
             Text("Plot Points")
                 .font(.headline)
                 .foregroundColor(.gray)
@@ -26,7 +28,11 @@ struct TextView: View {
                     get: { plotData.plotArray[0].calculatedText },
                     set: { _ in }
                 ))
+                
+                // Sets the size of the text editor.
                 .frame(width: width, height: height)
+                
+                // Adds a gray border around the text editor.
                 .border(Color.gray, width: 1)
                 .padding()
             }

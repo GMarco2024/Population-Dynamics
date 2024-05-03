@@ -31,7 +31,8 @@ import Observation
 
     /// Initializes a blank chart with predefined parameters, effectively resetting the plot.
     @MainActor func plotBlank() {
-        zeroData()  // Clears any existing data.
+    // Clears any existing data.
+        zeroData()
 
     // Set the Plot Parameters with initial values for a blank plot.
         changingPlotParameters.yMax = 1.0
@@ -47,9 +48,15 @@ import Observation
 
     /// Clears all data points and resets the point counter and calculated text.
     @MainActor func zeroData() {
-        plotData = []  // Empty the data array.
-        pointNumber = 1.0  // Reset the point counter.
-        calculatedText = ""  // Clear any text associated with calculations.
+        
+        // Empty the data array.
+        plotData = []
+        
+        // Reset the point counter.
+        pointNumber = 1.0
+        
+        // Clear any text associated with calculations.
+        calculatedText = ""
     }
 
     /// Adds an array of data points to the plot and updates the plot count and display text.
