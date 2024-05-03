@@ -28,11 +28,13 @@ struct ContentView: View {
                     .bold()
                     .underline()
                 
+                // Rotates the Y-axis label by -90 degrees.
                 HStack(alignment: .center, spacing: 0) {
                     Text(plotData.plotArray[selector].changingPlotParameters.yLabel)
                         .rotationEffect(Angle(degrees: -90))
                         .foregroundColor(.red)
              
+                // Renders a chart with line marks using the plot data.
                     VStack {
                         Chart(plotData.plotArray[selector].plotData) { data in
                             LineMark(
@@ -46,13 +48,15 @@ struct ContentView: View {
                         .chartYAxis {
                             AxisMarks(position: .leading)
                         }
-                       
+                // Displays the X-axis label.
                         Text(plotData.plotArray[selector].changingPlotParameters.xLabel)
                             .foregroundColor(.red)
                     }
                 }
                 .frame(alignment: .center)
             }
+            
+            //Here we have the textfields in which serve as the input for the Groth Rate, Initial Population, and Number of Generations.
          
             Group {
                 HStack {
@@ -77,6 +81,7 @@ struct ContentView: View {
                             .frame(maxWidth: 150)
                     }
                 }
+                //Button to calculate the function from CalculatePlotData, such function being the Logistic Map Equation.
                 
                 Button("Calculate") {
                     Task {
@@ -95,6 +100,8 @@ struct ContentView: View {
         }
     }
     
+    // Asynchronously calculates population dynamics based on user input.
+    
     func calculatePopulationDynamics() async {
         guard let mu = Double(inputμ), let initialPop = Double(inputInitialPopulation), let generations = Int(inputGenerations) else {
             resultText = "Invalid input. Please enter valid numbers."
@@ -106,6 +113,8 @@ struct ContentView: View {
         await calculator.generateLogisticMapData(mu: mu, initialX: initialPop, numberOfGenerations: generations)
     }
 }
+
+// Preview provider for SwiftUI previews.
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

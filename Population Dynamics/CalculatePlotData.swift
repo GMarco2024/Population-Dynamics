@@ -26,6 +26,7 @@ import SwiftUI
     ///   - xMax: Maximum value of x Axis
     ///   - yMin: Minimum value of y Axis
     ///   - yMax: Maximum value of y Axis
+    
     @MainActor func setThePlotParameters(color: String, xLabel: String, yLabel: String, title: String, xMin: Double, xMax: Double, yMin: Double, yMax: Double) {
         //set the Plot Parameters
         plotDataModel!.changingPlotParameters.yMax = yMax
@@ -56,6 +57,12 @@ import SwiftUI
     ///   - mu: The growth rate parameter of the logistic map
     ///   - initialX: The initial population normalized to carrying capacity
     ///   - numberOfGenerations: Number of generations to simulate
+    ///
+    /// Logistic Map Equation
+    ///
+    ///   x       =   mu x  (1  -  x )
+    ///    n + 1           n         n
+    ///
     func generateLogisticMapData(mu: Double, initialX: Double, numberOfGenerations: Int) async {
         await MainActor.run {
             plotDataModel?.zeroData()
